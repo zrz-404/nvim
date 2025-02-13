@@ -5,7 +5,11 @@
 
 
 return {
-	-- The naming convention is "GitHub Profile/GitHub Repo"
-	--example:
-	-- 'elkowar/yuck.vim'
+	"Pocco81/auto-save.nvim";
+	event = { "FocusLost" }, -- Load on focus loss
+	config = function()
+		require("auto-save").setup({
+			trigger_events = {"FocusLost"}, -- Autosave when neovim loses focus
+		})
+	end
 }
